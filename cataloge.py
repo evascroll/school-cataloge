@@ -1,72 +1,51 @@
 # school cataloge project
 # example usage a
 class School:
-    def __init__(self, name, level, numberOfStudents):
+    def __init__(self, name, level, number_of_students):
         self.name = name
         self.level = level
-        self.numberOfStudents = numberOfStudents  # private variable
+        self.number_of_students = number_of_students
 
-        # getter
-
-    def name(self):
-        return self.name
-
-        # getter
-
-    def level(self):
-        return self.level
-
-        # getter
-
-    def numberOfStudents(self):
-        return self.numberOfStudents
+    def number_of_students(self):
+        return self.number_of_students
 
         # setter
 
-    def numberOfStudents(self, value):
-        self.numberOfStudents = value
+    def number_of_students(self, value):
+        self.number_of_students = value
 
         """ other option
-        if value >= 0:self.numberOfStudents = value
+        if value >= 0:self.number_of_students = value
         else:
             print("number of student cannot be negative")"""
 
     # repr to print relevant inff
     def __repr__(self):
-        return f"A {self.level} School name {self.name} with {self.numberOfStudents} students!"
+        return f"A {self.level} School name {self.name} with {self.number_of_students} students!"
 
     # Example usage b
 
 
 class PrimarySchool(School):
-    def __init__(self, name, numberOfStudents, pickupPolicy):
-        super().__init__(name, "primary", numberOfStudents)
-        self.pickupPolicy = pickupPolicy
-
-        # getter
-
-    def pickupPolicy(self):
-        return self.pickupPolicy
+    def __init__(self, name, number_of_students, pickup_policy):
+        super().__init__(name, "primary", number_of_students)
+        self.pickup_policy = pickup_policy
 
     def __repr__(self):
         parent_repr = super().__repr__()
-        return f"{parent_repr} The pickup policy is {self.pickupPolicy}"
+        return f"{parent_repr} The pickup policy is {self.pickup_policy}"
 
     # example usage c
 
 
 class HighSchool(School):
-    def __init__(self, name, numberOfStudents, sportsTeam):
-        super().__init__(name, "high", numberOfStudents)
-        self.sportsTeam = sportsTeam
-
-    # getter
-    def sportsTeam(self):
-        return self.sportsTeam
+    def __init__(self, name, number_of_students, sports_team):
+        super().__init__(name, "high", number_of_students)
+        self.sports_team = sports_team
 
     def __repr__(self):
-        parent_name = super().__repr__()
-        return f"{parent_name} The sport Team are {', '.join(self.sportsTeam)}"
+        parent_repr = super().__repr__()
+        return f"{parent_repr} The sport Team are {', '.join(self.sports_team)}"
 
 
 # Example usages
