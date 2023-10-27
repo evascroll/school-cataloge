@@ -4,26 +4,26 @@ class School:
     def __init__(self, name, level, number_of_students):
         self.name = name
         self.level = level
-        self.number_of_students = number_of_students
+        self._number_of_students = number_of_students
 
+    @property
     def number_of_students(self):
-        return self.number_of_students
+        return self._number_of_students
 
-        # setter
-
+    @number_of_students.setter
     def number_of_students(self, value):
-        self.number_of_students = value
-
-        """ other option
-        if value >= 0:self.number_of_students = value
+        self._number_of_students = value
+        """ or 
+        if value >= 0:
+            self._number_of_students = value
         else:
-            print("number of student cannot be negative")"""
+            print("Number of students cannot be negative")"""
 
     # repr to print relevant inff
     def __repr__(self):
         return f"A {self.level} School name {self.name} with {self.number_of_students} students!"
 
-    # Example usage b
+    # Example usage  b
 
 
 class PrimarySchool(School):
@@ -49,7 +49,6 @@ class HighSchool(School):
 
 
 # Example usages
-
 a = School("codecademy", "high", 100)
 print(a)
 # print(a.name)
